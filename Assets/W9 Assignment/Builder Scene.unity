@@ -277,9 +277,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: ParadoxNotion::NodeCanvas.Framework.Blackboard
   _parentBlackboard: {fileID: 0}
-  _serializedBlackboard: '{"_variables":{}}'
+  _serializedBlackboard: '{"_variables":{"SelectedBuilding":{"_name":"SelectedBuilding","_id":"b0ef1741-ea1c-4b66-ab8b-f6534ff7722d","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
   _objectReferences: []
-  _serializedVariables: []
+  _serializedVariables:
+  - _json: '{"_name":"SelectedBuilding","_id":"b0ef1741-ea1c-4b66-ab8b-f6534ff7722d","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references: []
 --- !u!114 &1538114315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,7 +303,7 @@ MonoBehaviour:
     _version: 3.41
     _category: 
     _comments: 
-    _translation: {x: -146.32655, y: -40.652992}
+    _translation: {x: 69, y: -53}
     _zoomFactor: 1
   _firstActivation: 0
   _enableAction: 0
