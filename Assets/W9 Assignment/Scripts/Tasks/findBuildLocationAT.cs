@@ -1,6 +1,7 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using UnityEngine;
+using UnityEngine.AI;
 
 
 namespace NodeCanvas.Tasks.Actions {
@@ -8,13 +9,14 @@ namespace NodeCanvas.Tasks.Actions {
 	public class findBuildLocationAT : ActionTask {
 
 		
-		public BBParameter<BuildStats> selectedBuildStatsBBP;
+		//public BBParameter<BuildStats> selectedBuildStatsBBP;
 		public BBParameter<Vector2> townDimensionsBBP;
 		public BBParameter<float> buildPaddingBBP;
 		public BBParameter<Vector3> buildCenterBBP;
 		public BBParameter<GameObject> targetPositionBBP;
 		public BBParameter<GameObject> builderBBP;
 		public BBParameter<int> buildSelectionBBP;
+		
 		Vector2 spawnLimits;
 		float checkCount;
 		public float checkLimit;
@@ -26,7 +28,7 @@ namespace NodeCanvas.Tasks.Actions {
         //Return null if init was successfull. Return an error string otherwise
         protected override string OnInit() {
 			
-			 builderScript = builderBBP.value.GetComponent<BuilderScript>();
+			builderScript = builderBBP.value.GetComponent<BuilderScript>();
 			builderScript.ChangeSelectedBuilding(buildSelectionBBP.value);
 			usedBuildStats = builderScript.selectedBuildStats;
 
