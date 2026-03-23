@@ -14,6 +14,7 @@ namespace NodeCanvas.Tasks.Actions {
 		public BBParameter<float> buildPaddingBBP;
 		public BBParameter<Vector3> buildCenterBBP;
 		public BBParameter<GameObject> targetPositionBBP;
+		public BBParameter<Transform> builderTargetPosBBP;
 		public BBParameter<GameObject> builderBBP;
 		public BBParameter<int> buildSelectionBBP;
 		
@@ -24,21 +25,13 @@ namespace NodeCanvas.Tasks.Actions {
 		float buildingLength;
 		BuilderScript builderScript;
         BuildStats usedBuildStats;
+		Vector3 newBuilderTargetPos;
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
         protected override string OnInit() {
 			
 			builderScript = builderBBP.value.GetComponent<BuilderScript>();
-			builderScript.ChangeSelectedBuilding(buildSelectionBBP.value);
-			usedBuildStats = builderScript.selectedBuildStats;
-
-
-			buildingWidth = usedBuildStats.buildWidth;
-			buildingLength = usedBuildStats.buildLength;
 			
-
-            spawnLimits.x = townDimensionsBBP.value.x / 2 - buildingWidth / 2 + buildPaddingBBP.value;
-			spawnLimits.y = townDimensionsBBP.value.y / 2 - buildingLength / 2 + buildPaddingBBP.value;
             //EndAction(true);
             return null;
 		}
@@ -47,8 +40,18 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
-			//EndAction(true);
-		}
+            builderScript.ChangeSelectedBuilding(buildSelectionBBP.value);
+            usedBuildStats = builderScript.selectedBuildStats;
+
+
+            buildingWidth = usedBuildStats.buildWidth;
+            buildingLength = usedBuildStats.buildLength;
+
+
+            spawnLimits.x = townDimensionsBBP.value.x / 2 - buildingWidth / 2 + buildPaddingBBP.value;
+            spawnLimits.y = townDimensionsBBP.value.y / 2 - buildingLength / 2 + buildPaddingBBP.value;
+            //EndAction(true);
+        }
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
@@ -56,7 +59,7 @@ namespace NodeCanvas.Tasks.Actions {
 
 			Vector3 randSpawnPoint = new Vector3();
 			randSpawnPoint.x = Random.Range(-spawnLimits.x, spawnLimits.x);
-			randSpawnPoint.y = 1;
+			randSpawnPoint.y = 0;
 			randSpawnPoint.z = Random.Range(-spawnLimits.y, spawnLimits.y); ;
 
             if (checkCount < checkLimit)
@@ -66,8 +69,13 @@ namespace NodeCanvas.Tasks.Actions {
 				{
 					buildCenterBBP.value = randSpawnPoint;
 					targetPositionBBP.value.transform.position = buildCenterBBP.value;
-					Debug.Log("BAWWWAEAWA");
-					EndAction(true);
+                    
+					newBuilderTargetPos = targetPositionBBP.value.transform.position;
+                    newBuilderTargetPos.z += usedBuildStats.buildLength / 2;
+                    newBuilderTargetPos.z += buildPaddingBBP.value / 2;
+
+                    builderTargetPosBBP.value.transform.position = newBuilderTargetPos;
+                    EndAction(true);
 				}
 			}
 			else

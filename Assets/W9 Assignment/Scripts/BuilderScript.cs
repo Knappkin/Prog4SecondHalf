@@ -24,13 +24,16 @@ public class BuilderScript : MonoBehaviour
         buildStatsList.Add(townHallStats);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void ChangeSelectedBuilding(int selection)
     {
         selectedBuildStats = buildStatsList[selection];
+    }
+
+    public GameObject InstantiateBuilding(GameObject buildingPrefab, Transform buildLocation)
+    {
+        GameObject buildInstance = Instantiate(buildingPrefab);
+        buildInstance.transform.localScale = new Vector3(selectedBuildStats.buildWidth, selectedBuildStats.buildHeight, selectedBuildStats.buildLength);
+        buildInstance.transform.position = buildLocation.position;
+        return buildInstance;
     }
 }

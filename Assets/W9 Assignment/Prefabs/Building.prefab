@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 730323396889838084}
   - component: {fileID: 5536271648276559528}
   - component: {fileID: 5809826768228505627}
-  - component: {fileID: 2027550480509897009}
   m_Layer: 0
   m_Name: Building
   m_TagString: Untagged
@@ -113,15 +112,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2027550480509897009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 289609189193334364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a9e69b38153e0e45a39e6a7628379c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BuildingScript

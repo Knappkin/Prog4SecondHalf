@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c85279a116c418347991877dd38efb1e, type: 3}
   m_Name: HospitalStats
   m_EditorClassIdentifier: Assembly-CSharp::BuildStats
-  buildWidth: 0
-  buildLength: 0
-  buildHeight: 0
-  buildTime: 0
+  buildWidth: 20
+  buildLength: 20
+  buildHeight: 30
+  buildTime: 4
+  walkable: 0

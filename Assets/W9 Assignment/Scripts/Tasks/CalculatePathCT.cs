@@ -15,13 +15,13 @@ namespace NodeCanvas.Tasks.Conditions {
 		public BBParameter<Transform> targetPosBBP;
 		public BBParameter<float> paddingBBP;
 		public BBParameter<NavMeshAgent> navAgentBBP;
-		public BBParameter<NavMeshPath> navPathBBP;
+        public BBParameter<GameObject> builderBBP;
+        public BBParameter<NavMeshPath> navPathBBP;
 		public NavMeshSurface navMeshSurface;
 		public Blackboard blackboard;
 		BuilderScript builderScript;
-		public BBParameter<GameObject> builderBBP;
-        BuildStats usedBuildStats;
-        Vector3 newBuilderTargetPos;
+		
+
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
         protected override string OnInit(){
@@ -34,17 +34,9 @@ namespace NodeCanvas.Tasks.Conditions {
 		//Called whenever the condition gets enabled.
 		protected override void OnEnable() {
 
-            usedBuildStats = builderScript.selectedBuildStats;
-
-
-            newBuilderTargetPos = targetPosBBP.value.transform.position;
-            newBuilderTargetPos.z += usedBuildStats.buildLength / 2;
-            newBuilderTargetPos.z += paddingBBP.value / 2;
-
-            builderTargetPosBBP.value.transform.position = newBuilderTargetPos;
-
             navMeshSurface.BuildNavMesh();
             navPathBBP.value = new NavMeshPath();
+
         }
 
 		//Called whenever the condition gets disabled.
@@ -55,7 +47,7 @@ namespace NodeCanvas.Tasks.Conditions {
 		//Called once per frame while the condition is active.
 		//Return whether the condition is success or failure.
 		protected override bool OnCheck() {
-            if (navAgentBBP.value.CalculatePath(newBuilderTargetPos, navPathBBP.value))
+            if (navAgentBBP.value.CalculatePath(builderTargetPosBBP.value.transform.position, navPathBBP.value))
             {
                
                 return true;
@@ -63,6 +55,7 @@ namespace NodeCanvas.Tasks.Conditions {
 
 			else
 			{
+				Debug.Log("BIG FAILURE");
 				return false;
 			}
 		}
