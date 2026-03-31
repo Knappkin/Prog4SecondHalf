@@ -33,7 +33,15 @@ namespace NodeCanvas.Tasks.Actions {
 
 			ballMeshBBP.value.GetComponent<Renderer>().material.color = ballColourListBBP.value[ballStageBBP.value];
 
-			EndAction(true);
+			if (ballStageBBP.value == 4)
+			{
+				EndAction(true);
+			}
+			else
+			{
+				EndAction(false);
+			}
+			
 		}
 
 	}

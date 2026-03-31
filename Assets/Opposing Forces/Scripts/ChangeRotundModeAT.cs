@@ -41,6 +41,14 @@ namespace NodeCanvas.Tasks.Actions {
 				ballMeshBBP.value.transform.localScale = baseBallScaleBBP.value * Vector3.one;
 
 			}
+
+			else if (rotundModeBBP.value == 1)
+			{
+				rotundModeBBP.value = 0;
+				ballMeshBBP.value.SetActive(false);
+				ratMeshBBP.value.SetActive(true);
+
+			}
 			
 			EndAction(true);
 		}
