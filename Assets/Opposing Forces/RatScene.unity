@@ -629,16 +629,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: ParadoxNotion::NodeCanvas.Framework.Blackboard
   _parentBlackboard: {fileID: 0}
   _serializedBlackboard: '{"_variables":{"rb":{"_value":1,"_name":"rb","_id":"05e4953e-9312-4492-9901-0cb0e429a6a8","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Rigidbody,
-    UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
+    UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"baseBallScale":{"_value":1.0,"_name":"baseBallScale","_id":"9480175d-c0b9-4698-9fc5-35d13a2b0d9f","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"ratMesh":{"_value":2,"_name":"ratMesh","_id":"9e82386e-3579-4c2f-9a29-293f78e8dcf1","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"ballMesh":{"_value":3,"_name":"ballMesh","_id":"971084ed-43b0-4aa4-8645-7b99ce3b4865","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"timePerChargeTick":{"_value":1.0,"_name":"timePerChargeTick","_id":"a0e777ed-a3ed-40fe-b3bf-96c38c778d04","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"ballColourList":{"_value":[{"r":1.0,"g":1.0,"b":1.0},{"r":1.0,"g":0.8427394,"b":0.08962262},{"r":1.0,"g":0.4367325},{"r":1.0,"g":0.1816147}],"_name":"ballColourList","_id":"3a4b56f5-1df9-484b-8897-f317974b9949","$type":"NodeCanvas.Framework.Variable`1[[System.Collections.Generic.List`1[[UnityEngine.Color,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"ballColour":{"_name":"ballColour","_id":"734ea738-fc40-4bda-9f41-f0d067318180","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Color,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"ballStage
+    ":{"_name":"ballStage ","_id":"4848e9ea-a735-4643-9301-f6ceb4e4fbb6","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"rotundMode":{"_name":"rotundMode","_id":"7997af60-d61e-45ab-9d2a-89951d700209","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
   _objectReferences:
   - {fileID: 0}
   - {fileID: 831231753}
+  - {fileID: 1677249788}
+  - {fileID: 1552465752}
   _serializedVariables:
   - _json: '{"_value":1,"_name":"rb","_id":"05e4953e-9312-4492-9901-0cb0e429a6a8","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Rigidbody,
       UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
     _references:
     - {fileID: 0}
     - {fileID: 831231753}
+  - _json: '{"_value":1.0,"_name":"baseBallScale","_id":"9480175d-c0b9-4698-9fc5-35d13a2b0d9f","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+    _references: []
+  - _json: '{"_value":1,"_name":"ratMesh","_id":"9e82386e-3579-4c2f-9a29-293f78e8dcf1","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references:
+    - {fileID: 0}
+    - {fileID: 1677249788}
+  - _json: '{"_value":1,"_name":"ballMesh","_id":"971084ed-43b0-4aa4-8645-7b99ce3b4865","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references:
+    - {fileID: 0}
+    - {fileID: 1552465752}
+  - _json: '{"_value":1.0,"_name":"timePerChargeTick","_id":"a0e777ed-a3ed-40fe-b3bf-96c38c778d04","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+    _references: []
+  - _json: '{"_value":[{"r":1.0,"g":1.0,"b":1.0},{"r":1.0,"g":0.8427394,"b":0.08962262},{"r":1.0,"g":0.4367325},{"r":1.0,"g":0.1816147}],"_name":"ballColourList","_id":"3a4b56f5-1df9-484b-8897-f317974b9949","$type":"NodeCanvas.Framework.Variable`1[[System.Collections.Generic.List`1[[UnityEngine.Color,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+    _references: []
+  - _json: '{"_name":"ballColour","_id":"734ea738-fc40-4bda-9f41-f0d067318180","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Color,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references: []
+  - _json: '{"_name":"ballStage ","_id":"4848e9ea-a735-4643-9301-f6ceb4e4fbb6","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+    _references: []
+  - _json: '{"_name":"rotundMode","_id":"7997af60-d61e-45ab-9d2a-89951d700209","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+    _references: []
 --- !u!114 &831231755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -652,15 +693,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: NodeCanvas::NodeCanvas.BehaviourTrees.BehaviourTreeOwner
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_position":{"x":624.0,"y":457.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"0"},{"_action":{"hopCurve":{},"rbBBP":{"_value":1},"jumpCD":3.0,"$type":"NodeCanvas.Tasks.Actions.PrepRollAT"},"_position":{"x":648.0,"y":596.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"1"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
-  _boundGraphObjectReferences:
-  - {fileID: 0}
-  - {fileID: 831231753}
+  _boundGraphSerialization: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_position":{"x":630.0,"y":409.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"0"},{"policy":1,"_position":{"x":870.0,"y":537.0},"$type":"NodeCanvas.BehaviourTrees.Parallel","$id":"1"},{"_position":{"x":586.5572,"y":830.7643},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"2"},{"_action":{"rotundModeBBP":{"_name":"rotundMode","_targetVariableID":"7997af60-d61e-45ab-9d2a-89951d700209"},"ballMeshBBP":{"_name":"ballMesh","_targetVariableID":"971084ed-43b0-4aa4-8645-7b99ce3b4865"},"ratMeshBBP":{"_name":"ratMesh","_targetVariableID":"9e82386e-3579-4c2f-9a29-293f78e8dcf1"},"ballStageBBP":{"_name":"ballStage
+    ","_targetVariableID":"4848e9ea-a735-4643-9301-f6ceb4e4fbb6"},"colourListBBP":{"_name":"ballColourList","_targetVariableID":"3a4b56f5-1df9-484b-8897-f317974b9949"},"baseBallScaleBBP":{"_name":"baseBallScale","_targetVariableID":"9480175d-c0b9-4698-9fc5-35d13a2b0d9f"},"$type":"NodeCanvas.Tasks.Actions.ChangeRotundModeAT"},"_position":{"x":433.7569,"y":907.6589},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"3"},{"repeatTimes":{"_value":3},"_position":{"x":662.9944,"y":904.4086},"$type":"NodeCanvas.BehaviourTrees.Repeater","$id":"4"},{"coolDownTime":{"_name":"timePerChargeTick","_targetVariableID":"a0e777ed-a3ed-40fe-b3bf-96c38c778d04"},"_position":{"x":665.0772,"y":1005.491},"$type":"NodeCanvas.BehaviourTrees.Cooldown","$id":"5"},{"_action":{"ballMeshBBP":{"_name":"ballMesh","_targetVariableID":"971084ed-43b0-4aa4-8645-7b99ce3b4865"},"ballColor":{},"ballColourListBBP":{"_name":"ballColourList","_targetVariableID":"3a4b56f5-1df9-484b-8897-f317974b9949"},"ballStageBBP":{"_name":"ballStage
+    ","_targetVariableID":"4848e9ea-a735-4643-9301-f6ceb4e4fbb6"},"$type":"NodeCanvas.Tasks.Actions.ChargeUpRollAT"},"_position":{"x":640.9944,"y":1114.409},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"6"},{"_action":{"$type":"NodeCanvas.Tasks.Actions.AimRollAT"},"_position":{"x":996.6628,"y":763.3183},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"7"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _boundGraphObjectReferences: []
   _boundGraphSource:
     _version: 3.41
     _category: 
     _comments: 
-    _translation: {x: 0, y: 0}
+    _translation: {x: 133.44322, y: -175.90361}
     _zoomFactor: 1
   _firstActivation: 0
   _enableAction: 0
@@ -954,7 +995,7 @@ Transform:
   m_GameObject: {fileID: 1552465752}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.53, z: 0}
+  m_LocalPosition: {x: 0, y: 0.423, z: 0.148}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
