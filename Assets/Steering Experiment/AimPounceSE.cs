@@ -42,6 +42,8 @@ namespace NodeCanvas.Tasks.Actions {
 			playerDirectionLastFrame = playerDirectionThisFrame;
 			playerDirectionThisFrame = playerBBP.value.transform.forward;
 
+			playerAngleLastFrame = playerAngleThisFrame;
+			//playerAngleThisFrame = Mathf.Atan2()
 			playerMoveDirection = (playerPosThisFrame - playerPosLastFrame).normalized;
 
 			pounceTargetBBP.value.transform.position = playerPosThisFrame + (playerMoveDirection * distAhead);
