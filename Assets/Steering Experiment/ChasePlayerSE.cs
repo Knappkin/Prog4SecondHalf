@@ -2,13 +2,13 @@ using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using UnityEngine;
 
-
 namespace NodeCanvas.Tasks.Actions {
 
-	public class DrawAimLineSE : ActionTask {
+	public class ChasePlayerSE : ActionTask {
 
-		public BBParameter<LineRenderer> lineRendererBBP;
-		public float lineLength;
+		public BBParameter<Transform> targetPointBBP;
+		public float chaseSpeed;
+		public float bufferDist;
 		//Use for initialization. This is called only once in the lifetime of the task.
 		//Return null if init was successfull. Return an error string otherwise
 		protected override string OnInit() {
@@ -19,22 +19,19 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
-
-			lineRendererBBP.value.enabled = true;
 			//EndAction(true);
 		}
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
-			Vector3[] points;
+			
+			Vector3 directionToTarget = (targetPointBBP.value.transform.position - agent.transform.position).normalized;
+			agent.transform.position += chaseSpeed * directionToTarget * Time.deltaTime;
 
-			points = new Vector3[2];
-			points[0] = agent.transform.position;
-			points[0].y -= 0.4f;
-			points[1] = agent.transform.position + lineLength * agent.transform.forward;
-            points[1].y -= 0.4f;
-
-            lineRendererBBP.value.SetPositions(points);
+			if ((targetPointBBP.value.transform.position - agent.transform.position).magnitude < bufferDist)
+			{
+				EndAction();
+			}
 		}
 
 		//Called when the task is disabled.
