@@ -21,7 +21,7 @@ namespace NodeCanvas.Tasks.Actions {
 		//Return null if init was successfull. Return an error string otherwise
 		protected override string OnInit() {
 
-			pounceAcceleration = maxPounceSpeed / pounceAccelTime;
+			pounceAcceleration = (maxPounceSpeed-basePounceVelo) / pounceAccelTime;
 			
 			return null;
 		}
