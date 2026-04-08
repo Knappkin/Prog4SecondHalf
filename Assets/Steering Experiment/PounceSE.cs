@@ -1,26 +1,28 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
 namespace NodeCanvas.Tasks.Actions {
 
-	public class AimPounceSE : ActionTask {
+	public class PounceSE : ActionTask {
 
-		public BBParameter<Transform> playerBBP;
 		public BBParameter<Transform> pounceTargetBBP;
 
-		private Vector3 playerPosThisFrame;
-		
-		private Vector3 playerDirectionLastFrame;
-		private Vector3 playerDirectionThisFrame;
-
-		public float trackSpeed;
-		public float distAhead;
-
+		private Vector3 pounceDestination;
+		public float pounceSpeed;
+		public float pounceAccelTime;
+		private float pounceAcceleration;
+		public float maxPounceSpeed;
+		private float pounceVelo;
+		public float basePounceVelo;
 		//Use for initialization. This is called only once in the lifetime of the task.
 		//Return null if init was successfull. Return an error string otherwise
 		protected override string OnInit() {
+
+			pounceAcceleration = maxPounceSpeed / pounceAccelTime;
+			
 			return null;
 		}
 
@@ -28,25 +30,21 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
-			//EndAction(true);
-			playerDirectionThisFrame = playerBBP.value.transform.forward;
+            //pounceDirection = (pounceTargetBBP.value.transform.position - agent.transform.position).normalized;
+			pounceVelo = basePounceVelo;
+            //EndAction(true);
         }
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
+			pounceVelo += pounceAcceleration * Time.deltaTime;
 
+			if (pounceVelo > maxPounceSpeed)
+			{
+				pounceVelo = maxPounceSpeed;
+			}
 
-			playerPosThisFrame = playerBBP.value.transform.position;
-
-			playerDirectionLastFrame = playerDirectionThisFrame;
-			playerDirectionThisFrame = playerBBP.value.transform.forward;
-
-			Vector3 directionChange = (playerDirectionThisFrame - playerDirectionLastFrame).normalized;
-
-			Vector3 newDirection = (playerBBP.value.transform.forward + directionChange).normalized;
-
-
-			pounceTargetBBP.value.transform.position = playerPosThisFrame + newDirection * distAhead;
+			agent.transform.position += agent.transform.forward * pounceVelo * Time.deltaTime;
 		}
 
 		//Called when the task is disabled.
@@ -57,6 +55,14 @@ namespace NodeCanvas.Tasks.Actions {
 		//Called when the task is paused.
 		protected override void OnPause() {
 			
+		}
+
+		private void OnCollisionEnter(Collision collision)
+		{
+			if (collision.gameObject.layer == 8)
+			{
+				EndAction (true);
+			}
 		}
 	}
 }
