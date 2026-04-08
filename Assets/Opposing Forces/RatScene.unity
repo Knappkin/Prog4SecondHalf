@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 47665748}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 116880979}
   - component: {fileID: 116880978}
   - component: {fileID: 116880977}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Nose (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 142117279}
   - component: {fileID: 142117278}
   - component: {fileID: 142117277}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 176451496}
   - component: {fileID: 176451495}
   - component: {fileID: 176451494}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -498,7 +498,7 @@ GameObject:
   - component: {fileID: 177043251}
   - component: {fileID: 177043253}
   - component: {fileID: 177043252}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Riggley
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -582,7 +582,7 @@ GameObject:
   - component: {fileID: 286496183}
   - component: {fileID: 286496182}
   - component: {fileID: 286496181}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ear 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -694,7 +694,7 @@ GameObject:
   - component: {fileID: 327460993}
   - component: {fileID: 327460992}
   - component: {fileID: 327460991}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -806,7 +806,7 @@ GameObject:
   - component: {fileID: 347929544}
   - component: {fileID: 347929543}
   - component: {fileID: 347929542}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rat (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1019,7 +1019,7 @@ GameObject:
   - component: {fileID: 394046776}
   - component: {fileID: 394046775}
   - component: {fileID: 394046774}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ear 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1270,7 +1270,7 @@ GameObject:
   - component: {fileID: 831231753}
   - component: {fileID: 831231752}
   - component: {fileID: 831231757}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rotund
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1423,7 +1423,7 @@ MonoBehaviour:
     _version: 3.41
     _category: 
     _comments: 
-    _translation: {x: -1205, y: -505}
+    _translation: {x: 75, y: -462}
     _zoomFactor: 1
   _firstActivation: 0
   _enableAction: 0
@@ -1462,6 +1462,7 @@ Animation:
   m_Animation: {fileID: 7400000, guid: 64ed2b8a5a8812b43a2e5018e77d986f, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 64ed2b8a5a8812b43a2e5018e77d986f, type: 2}
+  - {fileID: 7400000, guid: 64ed2b8a5a8812b43a2e5018e77d986f, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -1479,7 +1480,7 @@ GameObject:
   - component: {fileID: 897397371}
   - component: {fileID: 897397370}
   - component: {fileID: 897397369}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1591,7 +1592,7 @@ GameObject:
   - component: {fileID: 910622998}
   - component: {fileID: 910622997}
   - component: {fileID: 910622996}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1701,7 +1702,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1260613421}
   - component: {fileID: 1260613422}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RatMeshes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1759,7 +1760,7 @@ GameObject:
   - component: {fileID: 1263459114}
   - component: {fileID: 1263459113}
   - component: {fileID: 1263459112}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2088,7 +2089,7 @@ GameObject:
   - component: {fileID: 1552465756}
   - component: {fileID: 1552465755}
   - component: {fileID: 1552465754}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BallMode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2310,7 +2311,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1677249789}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RatMeshes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2351,7 +2352,7 @@ GameObject:
   - component: {fileID: 1696991643}
   - component: {fileID: 1696991642}
   - component: {fileID: 1696991641}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tummy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2463,7 +2464,7 @@ GameObject:
   - component: {fileID: 1700283770}
   - component: {fileID: 1700283769}
   - component: {fileID: 1700283768}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2575,7 +2576,7 @@ GameObject:
   - component: {fileID: 1983289618}
   - component: {fileID: 1983289617}
   - component: {fileID: 1983289616}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2687,7 +2688,7 @@ GameObject:
   - component: {fileID: 1990815800}
   - component: {fileID: 1990815799}
   - component: {fileID: 1990815798}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -25,12 +25,12 @@ public class PlayerController : MonoBehaviour
     {
        
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) && !isTrapped)
         {
             playerRotation.y -= rotationSpeed * Time.deltaTime;
         }
 
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D) && !isTrapped)
         {
             playerRotation.y += rotationSpeed * Time.deltaTime;
         }
