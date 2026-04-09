@@ -13,19 +13,18 @@ namespace NodeCanvas.Tasks.Actions {
 		public Vector3 rollVelo;
 		public BBParameter<float> turnSpeed;
 
-		private Vector3 targetsDirection;
-		public float distanceAhead;
-
 		public float baseTurnSpeed;
 		private float turnAccel;
 		public float turnAccelTime;
 		public float maxTurnSpeed;
 
+		public float baseRollSpeed;
+
 		//Use for initialization. This is called only once in the lifetime of the task.
 		//Return null if init was successfull. Return an error string otherwise
 		protected override string OnInit() {
 
-			rollAccel = maxRollSpeed / rollAccelTime;
+			rollAccel = (maxRollSpeed-baseRollSpeed) / rollAccelTime;
 			turnAccel = maxTurnSpeed / turnAccelTime;
 
 			return null;
@@ -35,7 +34,7 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
-			rollVelo = Vector3.zero;
+			rollVelo = agent.transform.forward * baseRollSpeed;
 			turnSpeed.value = 0;
 			//EndAction(true);
 		}

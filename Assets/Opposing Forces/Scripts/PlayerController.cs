@@ -13,6 +13,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Color normalColour;
     [SerializeField] private Color trappedColour;
 
+    //Cheese Carrying Variables
+    public bool isHoldingCheese;
+    public bool loseCheese;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
