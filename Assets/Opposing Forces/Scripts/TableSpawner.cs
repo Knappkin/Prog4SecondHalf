@@ -23,7 +23,7 @@ public class TableSpawner : MonoBehaviour
     {
         float distFromGoal = (player.transform.position - table.transform.position).magnitude;
 
-        if (distFromGoal < scoreRange)
+        if (distFromGoal < scoreRange && playerScript.isHoldingCheese)
         {
             Debug.Log("SCORE");
             MoveTable();

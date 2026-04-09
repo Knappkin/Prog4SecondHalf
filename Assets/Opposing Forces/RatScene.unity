@@ -183,7 +183,7 @@ MonoBehaviour:
   table: {fileID: 1769121268}
   player: {fileID: 372190918}
   scoreRange: 1
-  spawnRange: 30
+  spawnRange: 5
 --- !u!4 &57052221
 Transform:
   m_ObjectHideFlags: 0
@@ -991,7 +991,7 @@ MonoBehaviour:
   trapTimeLimit: 3
   normalColour: {r: 0, g: 0.83137256, b: 1, a: 0}
   trappedColour: {r: 1, g: 0.19339621, b: 0.19339621, a: 0}
-  isHoldingCheese: 0
+  isHoldingCheese: 1
   loseCheese: 0
 --- !u!4 &372190920
 Transform:
@@ -1007,6 +1007,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1336668258}
+  - {fileID: 1362314726}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &372190921
@@ -1169,6 +1170,81 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 394046772}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &538521238
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 372190920}
+    m_Modifications:
+    - target: {fileID: 6397746747964288425, guid: 109b07b3c995a71458b30b9c7723dbcc, type: 3}
+      propertyPath: m_Name
+      value: CheesePlate
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801220050233813575, guid: 109b07b3c995a71458b30b9c7723dbcc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801220050233813575, guid: 109b07b3c995a71458b30b9c7723dbcc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801220050233813575, guid: 109b07b3c995a71458b30b9c7723dbcc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801220050233813575, guid: 109b07b3c995a71458b30b9c7723dbcc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.728
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801220050233813575, guid: 109b07b3c995a71458b30b9c7723dbcc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.112
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801220050233813575, guid: 109b07b3c995a71458b30b9c7723dbcc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801220050233813575, guid: 109b07b3c995a71458b30b9c7723dbcc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801220050233813575, guid: 109b07b3c995a71458b30b9c7723dbcc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801220050233813575, guid: 109b07b3c995a71458b30b9c7723dbcc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801220050233813575, guid: 109b07b3c995a71458b30b9c7723dbcc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801220050233813575, guid: 109b07b3c995a71458b30b9c7723dbcc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801220050233813575, guid: 109b07b3c995a71458b30b9c7723dbcc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801220050233813575, guid: 109b07b3c995a71458b30b9c7723dbcc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3316398038840846653, guid: 109b07b3c995a71458b30b9c7723dbcc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2001310356}
+    - targetCorrespondingSourceObject: {fileID: 4860402086640401490, guid: 109b07b3c995a71458b30b9c7723dbcc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1017050253}
+  m_SourcePrefab: {fileID: 100100000, guid: 109b07b3c995a71458b30b9c7723dbcc, type: 3}
 --- !u!1 &701075924
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,7 +1393,6 @@ GameObject:
   - component: {fileID: 831231756}
   - component: {fileID: 831231755}
   - component: {fileID: 831231754}
-  - component: {fileID: 831231753}
   - component: {fileID: 831231752}
   - component: {fileID: 831231757}
   m_Layer: 9
@@ -1348,33 +1423,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.5862447, y: 2.0859516, z: 1.5057948}
   m_Center: {x: -0.0038833022, y: 0.99426305, z: 0.08754647}
---- !u!54 &831231753
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831231751}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &831231754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1388,10 +1436,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: ParadoxNotion::NodeCanvas.Framework.Blackboard
   _parentBlackboard: {fileID: 0}
-  _serializedBlackboard: '{"_variables":{"rb":{"_value":1,"_name":"rb","_id":"05e4953e-9312-4492-9901-0cb0e429a6a8","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Rigidbody,
-    UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"baseBallScale":{"_value":1.0,"_name":"baseBallScale","_id":"9480175d-c0b9-4698-9fc5-35d13a2b0d9f","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"ratMesh":{"_value":2,"_name":"ratMesh","_id":"9e82386e-3579-4c2f-9a29-293f78e8dcf1","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
-    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"ballMesh":{"_value":3,"_name":"ballMesh","_id":"971084ed-43b0-4aa4-8645-7b99ce3b4865","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+  _serializedBlackboard: '{"_variables":{"baseBallScale":{"_value":1.0,"_name":"baseBallScale","_id":"9480175d-c0b9-4698-9fc5-35d13a2b0d9f","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"ratMesh":{"_value":1,"_name":"ratMesh","_id":"9e82386e-3579-4c2f-9a29-293f78e8dcf1","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"ballMesh":{"_value":2,"_name":"ballMesh","_id":"971084ed-43b0-4aa4-8645-7b99ce3b4865","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"timePerChargeTick":{"_value":1.0,"_name":"timePerChargeTick","_id":"a0e777ed-a3ed-40fe-b3bf-96c38c778d04","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"ballColourList":{"_value":[{"r":1.0,"g":1.0,"b":1.0},{"r":1.0,"g":0.8427394,"b":0.08962262},{"r":1.0,"g":0.4367325},{"r":1.0,"g":0.1816147}],"_name":"ballColourList","_id":"3a4b56f5-1df9-484b-8897-f317974b9949","$type":"NodeCanvas.Framework.Variable`1[[System.Collections.Generic.List`1[[UnityEngine.Color,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
@@ -1399,20 +1446,14 @@ MonoBehaviour:
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"ballStage
     ":{"_name":"ballStage ","_id":"4848e9ea-a735-4643-9301-f6ceb4e4fbb6","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"rotundMode":{"_name":"rotundMode","_id":"7997af60-d61e-45ab-9d2a-89951d700209","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"riggleyRat":{"_value":4,"_name":"riggleyRat","_id":"f869cf12-52eb-4325-a3c3-d30a946e9eeb","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"riggleyRat":{"_value":3,"_name":"riggleyRat","_id":"f869cf12-52eb-4325-a3c3-d30a946e9eeb","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
   _objectReferences:
   - {fileID: 0}
-  - {fileID: 831231753}
   - {fileID: 1677249788}
   - {fileID: 1552465752}
   - {fileID: 177043250}
   _serializedVariables:
-  - _json: '{"_value":1,"_name":"rb","_id":"05e4953e-9312-4492-9901-0cb0e429a6a8","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Rigidbody,
-      UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
-    _references:
-    - {fileID: 0}
-    - {fileID: 831231753}
   - _json: '{"_value":1.0,"_name":"baseBallScale","_id":"9480175d-c0b9-4698-9fc5-35d13a2b0d9f","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
@@ -1463,7 +1504,7 @@ MonoBehaviour:
   _boundGraphSerialization: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_position":{"x":1634.57,"y":760.8267},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"0"},{"_action":{"target":{"_name":"riggleyRat","_targetVariableID":"f869cf12-52eb-4325-a3c3-d30a946e9eeb"},"speed":{"_value":3.0},"angleDifference":{"_value":5.0},"upVector":{"_value":{"y":1.0}},"waitActionFinish":true,"$type":"NodeCanvas.Tasks.Actions.RotateTowards"},"_position":{"x":1541.0,"y":1097.676},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"1"},{"_action":{"actions":[{"setTo":1,"overrideAgent":{"_type":"UnityEngine.Transform","_value":1},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"},{"animationClip":{"_value":2},"$type":"NodeCanvas.Tasks.Actions.PlayAnimationSimple"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":1685.352,"y":1091.676},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"2"},{"_action":{"actions":[{"waitTime":{"_value":3.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"setTo":0,"overrideAgent":{"_type":"UnityEngine.Transform","_value":1},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":1850.188,"y":1092.482},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"3"},{"policy":2,"dynamic":true,"_position":{"x":559.0,"y":555.0},"$type":"NodeCanvas.BehaviourTrees.Parallel","$id":"4"},{"_position":{"x":594.0207,"y":737.2641},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"5"},{"_action":{"actions":[{"waitTime":{"_value":2.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"rotundModeBBP":{"_name":"rotundMode","_targetVariableID":"7997af60-d61e-45ab-9d2a-89951d700209"},"ballMeshBBP":{"_name":"ballMesh","_targetVariableID":"971084ed-43b0-4aa4-8645-7b99ce3b4865"},"ratMeshBBP":{"_name":"ratMesh","_targetVariableID":"9e82386e-3579-4c2f-9a29-293f78e8dcf1"},"ballStageBBP":{"_name":"ballStage
     ","_targetVariableID":"4848e9ea-a735-4643-9301-f6ceb4e4fbb6"},"colourListBBP":{"_name":"ballColourList","_targetVariableID":"3a4b56f5-1df9-484b-8897-f317974b9949"},"baseBallScaleBBP":{"_name":"baseBallScale","_targetVariableID":"9480175d-c0b9-4698-9fc5-35d13a2b0d9f"},"$type":"NodeCanvas.Tasks.Actions.ChangeRotundModeAT"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":356.3932,"y":826.295},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"6"},{"repeatTimes":{"_value":3},"_position":{"x":615.6307,"y":826.045},"$type":"NodeCanvas.BehaviourTrees.Repeater","$id":"7"},{"_action":{"actions":[{"waitTime":{"_value":1.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"ballMeshBBP":{"_name":"ballMesh","_targetVariableID":"971084ed-43b0-4aa4-8645-7b99ce3b4865"},"ballColor":{},"ballColourListBBP":{"_name":"ballColourList","_targetVariableID":"3a4b56f5-1df9-484b-8897-f317974b9949"},"ballStageBBP":{"_name":"ballStage
     ","_targetVariableID":"4848e9ea-a735-4643-9301-f6ceb4e4fbb6"},"$type":"NodeCanvas.Tasks.Actions.ChargeUpRollAT"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":588.6307,"y":925.046},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"8"},{"_action":{"actions":[{"waitTime":{"_value":1.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"rotundModeBBP":{"_name":"rotundMode","_targetVariableID":"7997af60-d61e-45ab-9d2a-89951d700209"},"ballMeshBBP":{"_name":"ballMesh","_targetVariableID":"971084ed-43b0-4aa4-8645-7b99ce3b4865"},"ratMeshBBP":{"_name":"ratMesh","_targetVariableID":"9e82386e-3579-4c2f-9a29-293f78e8dcf1"},"ballStageBBP":{"_name":"ballStage
-    ","_targetVariableID":"4848e9ea-a735-4643-9301-f6ceb4e4fbb6"},"colourListBBP":{"_name":"ballColourList","_targetVariableID":"3a4b56f5-1df9-484b-8897-f317974b9949"},"baseBallScaleBBP":{"_name":"baseBallScale","_targetVariableID":"9480175d-c0b9-4698-9fc5-35d13a2b0d9f"},"$type":"NodeCanvas.Tasks.Actions.ChangeRotundModeAT"},{"waitTime":{"_value":1.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":819.8588,"y":825.747},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"9"},{"_action":{"$type":"NodeCanvas.Tasks.Actions.AimRollAT"},"_position":{"x":1092.32,"y":823.8376},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"10"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"10"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+    ","_targetVariableID":"4848e9ea-a735-4643-9301-f6ceb4e4fbb6"},"colourListBBP":{"_name":"ballColourList","_targetVariableID":"3a4b56f5-1df9-484b-8897-f317974b9949"},"baseBallScaleBBP":{"_name":"baseBallScale","_targetVariableID":"9480175d-c0b9-4698-9fc5-35d13a2b0d9f"},"$type":"NodeCanvas.Tasks.Actions.ChangeRotundModeAT"},{"waitTime":{"_value":1.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":819.8588,"y":825.747},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"9"},{"_action":{"$type":"NodeCanvas.Tasks.Actions.AimRollAT"},"_position":{"x":1092.32,"y":823.8376},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"10"},{"_position":{"x":959.422,"y":1185.794},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"11"},{"_position":{"x":864.2227,"y":1288.007},"$type":"NodeCanvas.BehaviourTrees.ConditionalEvaluator","$id":"12"},{"_position":{"x":845.1828,"y":1422.288},"$type":"NodeCanvas.BehaviourTrees.Parallel","$id":"13"},{"_position":{"x":792.0718,"y":1574.607},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"14"},{"_position":{"x":901.3002,"y":1570.599},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"15"},{"_position":{"x":1204.936,"y":1337.11},"$type":"NodeCanvas.BehaviourTrees.Parallel","$id":"16"},{"_position":{"x":1128.776,"y":1518.49},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"17"},{"_position":{"x":1283.099,"y":1518.49},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"18"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"10"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"11"},"_targetNode":{"$ref":"12"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"11"},"_targetNode":{"$ref":"16"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"12"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"13"},"_targetNode":{"$ref":"14"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"13"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"16"},"_targetNode":{"$ref":"17"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"16"},"_targetNode":{"$ref":"18"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
   - {fileID: 47665748}
@@ -1472,8 +1513,8 @@ MonoBehaviour:
     _version: 3.41
     _category: 
     _comments: 
-    _translation: {x: 91.12479, y: 87.79134}
-    _zoomFactor: 0.54850173
+    _translation: {x: 502.81534, y: -261.43466}
+    _zoomFactor: 0.6407083
   _firstActivation: 0
   _enableAction: 0
   _disableAction: 0
@@ -1741,6 +1782,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910622994}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1017050249 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4860402086640401490, guid: 109b07b3c995a71458b30b9c7723dbcc, type: 3}
+  m_PrefabInstance: {fileID: 538521238}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1017050253
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017050249}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -462981019419857548, guid: bba6bd112433349458e9ed7f23acc9c6, type: 3}
 --- !u!1 &1260613420
 GameObject:
   m_ObjectHideFlags: 0
@@ -2126,6 +2194,16 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &1362314725 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6397746747964288425, guid: 109b07b3c995a71458b30b9c7723dbcc, type: 3}
+  m_PrefabInstance: {fileID: 538521238}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1362314726 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8801220050233813575, guid: 109b07b3c995a71458b30b9c7723dbcc, type: 3}
+  m_PrefabInstance: {fileID: 538521238}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1552465752
 GameObject:
   m_ObjectHideFlags: 0
@@ -2911,6 +2989,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1990815796}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2001310354 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3316398038840846653, guid: 109b07b3c995a71458b30b9c7723dbcc, type: 3}
+  m_PrefabInstance: {fileID: 538521238}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2001310356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001310354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7ecb36104d8362428adafe8759da348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Cheese
+  parentObject: {fileID: 1362314725}
+  player: {fileID: 372190918}
 --- !u!1001 &4096094978418271943
 PrefabInstance:
   m_ObjectHideFlags: 0

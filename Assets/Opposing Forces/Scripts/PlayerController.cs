@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     {
         playerRotation = transform.localEulerAngles;
         timeTrapped = 0f;
+
+        isHoldingCheese = true;
     }
 
     // Update is called once per frame
