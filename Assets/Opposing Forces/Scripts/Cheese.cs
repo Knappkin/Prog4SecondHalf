@@ -43,7 +43,7 @@ public class Cheese : MonoBehaviour
         GetComponentInChildren<MeshCollider>().enabled = false;
         transform.parent = parentObject.transform;
         transform.position = transform.parent.position;
-
+        transform.rotation = transform.parent.rotation;
         playerScript.isHoldingCheese = true;
     }
 
