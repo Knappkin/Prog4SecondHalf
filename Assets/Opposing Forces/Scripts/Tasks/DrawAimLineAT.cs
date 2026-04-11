@@ -32,11 +32,12 @@ namespace NodeCanvas.Tasks.Actions {
 
             points = new Vector3[2];
             points[0] = agent.transform.position;
-            points[0].y -= 0.4f;
+           // points[0].y -= 0.f;
             points[1] = agent.transform.position + lineLength * agent.transform.forward;
-            points[1].y -= 0.4f;
+           // points[1].y -= 0.4f;
 
             lineRendererBBP.value.SetPositions(points);
+
         }
     }
 }
