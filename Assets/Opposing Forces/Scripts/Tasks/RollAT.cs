@@ -20,10 +20,15 @@ namespace NodeCanvas.Tasks.Actions {
         public float maxTurnSpeed;
 
         public float baseRollSpeed;
+        private Rigidbody rb;
+
+        public BBParameter<BtFixedUpdate> btFixedUpdateBBP;
         
 		//Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
         protected override string OnInit() {
+            rb = agent.GetComponent<Rigidbody>();
+
             rollAccel = (maxRollSpeed - baseRollSpeed) / rollAccelTime;
             turnAccel = maxTurnSpeed / turnAccelTime;
 
@@ -36,10 +41,28 @@ namespace NodeCanvas.Tasks.Actions {
 		protected override void OnExecute() {
             rollVelo = agent.transform.forward * baseRollSpeed;
             turnSpeed.value = 0;
+            btFixedUpdateBBP.value.fixedUpdateCall.AddListener(OnMyFixedUpdate);
         }
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
+           
+
+           
+        }
+
+        //Called when the task is disabled.
+        protected override void OnStop() {
+			
+		}
+
+		//Called when the task is paused.
+		protected override void OnPause() {
+			
+		}
+
+        public void OnMyFixedUpdate()
+        {
             rollVelo += agent.transform.forward * rollAccel * Time.deltaTime;
 
             rollVelo = Vector3.ClampMagnitude(rollVelo, maxRollSpeed);
@@ -53,19 +76,9 @@ namespace NodeCanvas.Tasks.Actions {
                 turnSpeed.value = maxTurnSpeed;
             }
 
-            agent.transform.position += rollVelo * Time.deltaTime;
-
+            rb.linearVelocity = rollVelo;
+            Debug.Log("WORKED");
         }
-
-        //Called when the task is disabled.
-        protected override void OnStop() {
-			
-		}
-
-		//Called when the task is paused.
-		protected override void OnPause() {
-			
-		}
 
 	}
 }
