@@ -8,6 +8,7 @@ TagManager:
   - Table
   - PlayerOF
   - Cheese
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -18,10 +19,10 @@ TagManager:
   - Building
   - 
   - Player
-  - Rat
-  - 
-  - 
-  - 
+  - Rotund
+  - Cheese
+  - Trap
+  - Wall
   - 
   - 
   - 

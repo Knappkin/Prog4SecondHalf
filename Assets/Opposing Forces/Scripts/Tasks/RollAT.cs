@@ -1,5 +1,6 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -13,6 +14,8 @@ namespace NodeCanvas.Tasks.Actions {
         private float rollAccel;
         public Vector3 rollVelo;
         public BBParameter<float> turnSpeed;
+
+        public BBParameter<bool> isRollingBBP;
 
         public float baseTurnSpeed;
         private float turnAccel;
@@ -39,6 +42,7 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
+            isRollingBBP.value = true;
             rollVelo = agent.transform.forward * baseRollSpeed;
             turnSpeed.value = 0;
             btFixedUpdateBBP.value.fixedUpdateCall.AddListener(OnMyFixedUpdate);
@@ -77,7 +81,7 @@ namespace NodeCanvas.Tasks.Actions {
             }
 
             rb.linearVelocity = rollVelo;
-            Debug.Log("WORKED");
+           
         }
 
 	}

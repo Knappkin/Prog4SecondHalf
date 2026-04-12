@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3274466180700521019}
   - component: {fileID: 8798925325223492987}
   - component: {fileID: 5447914255941098740}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 7018130357447171192}
   - component: {fileID: 6282973524139171280}
   - component: {fileID: 7283312595494871857}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 150810204224777400}
   - component: {fileID: 955076756787968617}
   - component: {fileID: 4176821087616143500}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1733622762197018705}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BarPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,7 +313,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8768811307239909184}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SnapPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 3631071275668112082}
   - component: {fileID: 7413848782896683343}
   - component: {fileID: 50497963363344759}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 3037360163757802148}
   - component: {fileID: 2234896709082692145}
   - component: {fileID: 6547658867624750353}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Trap
   m_TagString: Trap
   m_Icon: {fileID: 0}
