@@ -10,9 +10,13 @@ namespace NodeCanvas.Tasks.Actions {
         public BBParameter<BtFixedUpdate> btFixedUpdateBBP;
         public BBParameter<Vector3> contactPointBBP;
         public BBParameter<bool> isRollingBBP;
+        public BBParameter<float> stunDurationBBP;
+        public BBParameter<bool> canChaseCheeseBBP;
         public float reboundVelo;
-       // public BBParameter<>
+        private float currentDecel;
+        // public BBParameter<>
 
+        private float rotundDecel;
         private Rigidbody rb;
         private Vector3 knockbackDirection;
 
@@ -21,7 +25,7 @@ namespace NodeCanvas.Tasks.Actions {
         protected override string OnInit()
         {
             rb = agent.GetComponent<Rigidbody>();
-            btFixedUpdateBBP.value.fixedUpdateCall.AddListener(MyFixedUpdate);
+           
             return null;
         }
 
@@ -30,21 +34,22 @@ namespace NodeCanvas.Tasks.Actions {
         //EndAction can be called from anywhere.
         protected override void OnExecute()
         {
+            reboundVelo = Mathf.Abs(rb.linearVelocity.magnitude) * 0.6f;
+            rotundDecel = reboundVelo / stunDurationBBP.value;
             knockbackDirection = GetReboundDirection();
+            rb.angularVelocity = Vector3.zero;
+            currentDecel = 0f;
+            btFixedUpdateBBP.value.fixedUpdateCall.AddListener(MyFixedUpdate);
             StartCoroutine(ActionTimer());
-            //EndAction(true);
         }
 
-        //Called once per frame while the action is active.
-        protected override void OnUpdate()
-        {
-
-        }
 
         private void MyFixedUpdate()
         {
-           Debug.Log("THIS HAPPENED");
-            rb.linearVelocity = knockbackDirection * reboundVelo;
+           
+            rb.linearVelocity = knockbackDirection * reboundVelo + (-knockbackDirection * currentDecel);
+            currentDecel += rotundDecel * Time.deltaTime;
+          
         }
         private Vector3 GetReboundDirection()
         {
@@ -55,8 +60,12 @@ namespace NodeCanvas.Tasks.Actions {
 
        private IEnumerator ActionTimer()
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(3);
+            //Debug.Log("Waited the 3 seconds");
             isRollingBBP.value = false;
+            rb.linearVelocity = Vector3.zero;
+            btFixedUpdateBBP.value.fixedUpdateCall.RemoveListener(MyFixedUpdate);
+            canChaseCheeseBBP.value = true;
             EndAction(true);
         }
     }

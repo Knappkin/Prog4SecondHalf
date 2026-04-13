@@ -1,3 +1,5 @@
+using NodeCanvas.BehaviourTrees;
+using NodeCanvas.Framework;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,9 +12,12 @@ public class Cheese : MonoBehaviour
     private PlayerController playerScript;
     public float pickupCD;
 
+    public bool cheeseIsDropped;
     public UnityEvent cheeseDropped;
 
     public UnityEvent cheesePickedUp;
+
+    public GameObject rotund;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,7 +38,7 @@ public class Cheese : MonoBehaviour
     {
        
         cheeseDropped.Invoke();
-       
+        rotund.GetComponent<BehaviourTreeOwner>().GetComponent<Blackboard>().GetVariable<bool>("cheeseIsDropped").value = true;
         transform.parent = null;
         gameObject.AddComponent<Rigidbody>();
         GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-5, 5), Random.Range(0, 5), Random.Range(-5, 5)), ForceMode.Impulse);
@@ -57,6 +62,7 @@ public class Cheese : MonoBehaviour
         transform.position = transform.parent.position;
         transform.rotation = transform.parent.rotation;
         playerScript.isHoldingCheese = true;
+        rotund.GetComponent<BehaviourTreeOwner>().GetComponent<Blackboard>().GetVariable<bool>("cheeseIsDropped").value = false;
     }
 
     private void ReturnToPlate()

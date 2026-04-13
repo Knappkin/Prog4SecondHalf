@@ -8,7 +8,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float moveSpeed;
+    private float moveSpeed;
     public float rotationSpeed;
     Vector3 playerRotation;
     public bool isTrapped;
@@ -41,6 +41,10 @@ public class PlayerController : MonoBehaviour
 
     private float Decel = 3f;
 
+    public bool isGrappled;
+
+    [SerializeField] private float normalSpeed;
+    [SerializeField] private float grappledSpeed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -55,6 +59,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            isGrappled = !isGrappled;
+        }
         moveInput = Input.GetAxisRaw("Horizontal");
        
 
@@ -105,6 +113,14 @@ public class PlayerController : MonoBehaviour
         }
         if (!isTrapped && !isKnockedBack)
         {
+            if (isGrappled)
+            {
+                moveSpeed = grappledSpeed;
+            }
+            else
+            {
+                moveSpeed = normalSpeed;
+            }
             rb.transform.localEulerAngles = playerRotation;
             rb.linearVelocity = transform.forward * moveSpeed;
         }
