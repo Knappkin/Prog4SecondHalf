@@ -1,22 +1,17 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
+using System.Collections;
 using UnityEngine;
-
 
 namespace NodeCanvas.Tasks.Actions {
 
-	public class ChooseTrapLocationAT : ActionTask {
+	public class PlantTrapAT : ActionTask {
 
-
-		public BBParameter<Vector3> trapPlacementPosBBP;
-		
-		public float trapPlacementRange;
-		public float overlapCheckRadius;
-		
+		public BBParameter<GameObject> trapPrefabBBP;
+		public ParticleSystem workParticles;
 		//Use for initialization. This is called only once in the lifetime of the task.
 		//Return null if init was successfull. Return an error string otherwise
 		protected override string OnInit() {
-
 			return null;
 		}
 
@@ -24,26 +19,33 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
-			//EndAction(true);
+			
+			workParticles.Play();
+			StartCoroutine(PlantTimer());
 		}
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
-
-            Vector3 testTrapLocation;
-			testTrapLocation.x = Random.Range(-trapPlacementRange, trapPlacementRange);
-			testTrapLocation.z = Random.Range(-trapPlacementRange, trapPlacementRange);
-			testTrapLocation.y = 0.05f;
-
-			Collider[] hits = Physics.OverlapSphere(testTrapLocation, overlapCheckRadius/2, 11);
 			
-            if (hits.Length != 0)
-			{
-				trapPlacementPosBBP.value = testTrapLocation;
-				EndAction(true);
-			}
-        }
+		}
 
-	
+		//Called when the task is disabled.
+		protected override void OnStop() {
+			
+		}
+
+		//Called when the task is paused.
+		protected override void OnPause() {
+			
+		}
+
+		private IEnumerator PlantTimer()
+		{
+			yield return new WaitForSeconds(3);
+
+            workParticles.Stop();
+			
+            EndAction(true);
+		}
 	}
 }

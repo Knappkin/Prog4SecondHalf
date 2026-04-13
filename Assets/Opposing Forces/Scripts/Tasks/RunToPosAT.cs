@@ -54,6 +54,7 @@ namespace NodeCanvas.Tasks.Actions {
 
 			if ((destinationBBP.value - agent.transform.position).magnitude <= stopBuffer)
 			{
+				rb.linearVelocity = Vector3.zero;
 				EndAction(true);
 			}
 
@@ -64,18 +65,19 @@ namespace NodeCanvas.Tasks.Actions {
             myFixedUpdateBBP.value.fixedUpdateCall.RemoveListener(MyFixedUpdate);
         }
 
-		private void MyFixedUpdate()
+		public void MyFixedUpdate()
 		{
+			
 			Vector3 directionToTarget = (destinationBBP.value - agent.transform.position).normalized;
 
-			if (!withinSlowDist)
-			{
+			//if (!withinSlowDist)
+			//{
 				runSpeed += accel * Time.deltaTime;
-			}
-			else
-			{
-				runSpeed -= decel * Time.deltaTime;
-			}
+			//}
+			//else
+			//{
+			//	runSpeed -= decel * Time.deltaTime;
+			//}
 			if (runSpeed > runMaxSpeed.value)
 			{
 				runSpeed = runMaxSpeed.value;

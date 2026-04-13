@@ -437,6 +437,7 @@ GameObject:
   - component: {fileID: 3037360163757802148}
   - component: {fileID: 2234896709082692145}
   - component: {fileID: 6547658867624750353}
+  - component: {fileID: 6454332882804913699}
   m_Layer: 11
   m_Name: Trap
   m_TagString: Trap
@@ -454,7 +455,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.72, y: 0, z: 4.3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7018130357447171192}
@@ -494,3 +495,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dda1a7836affca64d820c55b7360e2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!111 &6454332882804913699
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553401406762334567}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: a93b28229e094334e82892af3e542357, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: a93b28229e094334e82892af3e542357, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
