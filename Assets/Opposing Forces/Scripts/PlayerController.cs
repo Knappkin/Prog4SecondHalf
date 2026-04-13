@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Color trappedColour;
 
     public GameObject rotund;
+    public GameObject riggley;
     public Cheese cheeseScript;
 
     //Cheese Carrying Variables
@@ -154,7 +155,15 @@ public class PlayerController : MonoBehaviour
             knockMeBack = true;
             knockBackDirection = (rb.transform.position - collision.gameObject.transform.position).normalized;
 
-            
+        
+        }
+
+        if (colLayer == 11)
+        {
+            if (riggley.GetComponent<BehaviourTreeOwner>().GetComponent<Blackboard>().GetVariable<bool>("isPouncing").value == true)
+            {
+                rb.linearVelocity = Vector3.zero;
+            }
         }
     }
 

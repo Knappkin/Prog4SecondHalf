@@ -41,7 +41,6 @@ namespace NodeCanvas.Tasks.Actions {
 			decel = runMaxSpeed.value / runDecelTime.value;
 			runSpeed = 0;
 			slowingDist = runMaxSpeed.value / 2 * runDecelTime.value; //Used https://math.stackexchange.com/questions/2820689/calculate-stopping-distance-from-deceleration-time-and-speed#:~:text=Since%20we%20know%20that%20after,%E2%88%921m/s2.
-
             //EndAction(true);
         }
 
@@ -88,6 +87,7 @@ namespace NodeCanvas.Tasks.Actions {
 				runSpeed = 0;
 			}
 
+			//rb.angularVelocity = Vector3.zero;
 			rb.linearVelocity = runSpeed * directionToTarget;
 
 		
