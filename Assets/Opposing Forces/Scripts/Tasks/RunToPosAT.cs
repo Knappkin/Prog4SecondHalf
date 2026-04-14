@@ -12,6 +12,9 @@ namespace NodeCanvas.Tasks.Actions {
 		public BBParameter<float> runAccelTime;
 		public BBParameter<float> runDecelTime;
 		public BBParameter<BtFixedUpdate> myFixedUpdateBBP;
+		public BBParameter<bool> hasCheeseBBP;
+		public BBParameter<float> feedRangeBBP;
+		public BBParameter<bool> feedRotundBBP;
 
 		public float stopBuffer;
 		
@@ -20,6 +23,7 @@ namespace NodeCanvas.Tasks.Actions {
 		private float decel;
 		private float slowingDist;
 		float runSpeed;
+		public BBParameter<Cheese> cheeseScriptBBP;
 
 		private bool withinSlowDist;
 		//Use for initialization. This is called only once in the lifetime of the task.
@@ -40,6 +44,8 @@ namespace NodeCanvas.Tasks.Actions {
 			accel = runMaxSpeed.value / runAccelTime.value;
 			decel = runMaxSpeed.value / runDecelTime.value;
 			runSpeed = 0;
+			Vector3 resetRotation = new Vector3(0f,rb.rotation.y,0f);
+			rb.transform.localEulerAngles = resetRotation;
 			slowingDist = runMaxSpeed.value / 2 * runDecelTime.value; //Used https://math.stackexchange.com/questions/2820689/calculate-stopping-distance-from-deceleration-time-and-speed#:~:text=Since%20we%20know%20that%20after,%E2%88%921m/s2.
             //EndAction(true);
         }
@@ -57,6 +63,12 @@ namespace NodeCanvas.Tasks.Actions {
 				EndAction(true);
 			}
 
+			if (hasCheeseBBP.value && (destinationBBP.value - agent.transform.position).magnitude < feedRangeBBP.value)
+			{
+
+				cheeseScriptBBP.value.cheeseIsEaten = true;
+				hasCheeseBBP.value = false;
+			}
         }
 
 		//Called when the task is disabled.

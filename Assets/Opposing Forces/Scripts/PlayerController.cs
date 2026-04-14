@@ -79,7 +79,13 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (riggley.GetComponent<BehaviourTreeOwner>().GetComponent<Blackboard>().GetVariable<bool>("hasCheese").value == true && (riggley.transform.position - transform.position).magnitude < 3f)
+        {
+            cheeseScript.PlayerPickUp();
+            riggley.GetComponent<BehaviourTreeOwner>().GetComponent<Blackboard>().GetVariable<bool>("hasCheese").value = false;
         }
+
+    }
     private void FixedUpdate()
     {
         
@@ -164,6 +170,7 @@ public class PlayerController : MonoBehaviour
             {
                 rb.linearVelocity = Vector3.zero;
             }
+
         }
     }
 

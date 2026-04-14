@@ -19,6 +19,14 @@ public class Cheese : MonoBehaviour
 
     public GameObject rotund;
     public GameObject riggley;
+
+    public float spawnRadius;
+
+    public float cheeseFlingForce;
+
+    public bool cheeseIsEaten;
+    [SerializeField] private float cheeseBufferSpace;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,6 +37,14 @@ public class Cheese : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       if (cheeseIsEaten)
+        {
+            cheeseIsEaten = false;
+            rotund.GetComponent<BehaviourTreeOwner>().GetComponent<Blackboard>().GetVariable<bool>("cheeseIsDropped").value = false;
+            riggley.GetComponent<BehaviourTreeOwner>().GetComponent<Blackboard>().GetVariable<bool>("cheeseIsDropped").value = false;
+            DropNewCheese();
+        }
+
         if (Input.GetKeyDown(KeyCode.L))
         {
             LaunchCheese();
@@ -38,14 +54,9 @@ public class Cheese : MonoBehaviour
    public void LaunchCheese()
     {
        
-        cheeseDropped.Invoke();
-        rotund.GetComponent<BehaviourTreeOwner>().GetComponent<Blackboard>().GetVariable<bool>("cheeseIsDropped").value = true;
-        riggley.GetComponent<BehaviourTreeOwner>().GetComponent<Blackboard>().GetVariable<bool>("cheeseIsDropped").value = true;
-        transform.parent = null;
-        gameObject.AddComponent<Rigidbody>();
-        GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-5, 5), Random.Range(0, 5), Random.Range(-5, 5)), ForceMode.Impulse);
-        GetComponentInChildren<MeshCollider>().enabled = true;
-
+      
+        EnableCheesePhysics();
+        GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-cheeseFlingForce, cheeseFlingForce), Random.Range(0, 5), Random.Range(-cheeseFlingForce, cheeseFlingForce)), ForceMode.Impulse);
         playerScript.isHoldingCheese = false;
         StartCoroutine(PickupCooldown());
     }
@@ -58,13 +69,13 @@ public class Cheese : MonoBehaviour
 
         transform.position = transform.parent.position;
         Vector3 offsetTransform = transform.position;
-        offsetTransform.y += 1f;
+        offsetTransform.y += 2f;
         transform.position = offsetTransform;
         transform.rotation = transform.parent.rotation;
         riggley.GetComponent<BehaviourTreeOwner>().GetComponent<Blackboard>().GetVariable<bool>("hasCheese").value = true;
     }
 
-    private void PlayerPickUp()
+    public void PlayerPickUp()
     {
 
         Destroy(gameObject.GetComponent<Rigidbody>());
@@ -77,9 +88,22 @@ public class Cheese : MonoBehaviour
         riggley.GetComponent<BehaviourTreeOwner>().GetComponent<Blackboard>().GetVariable<bool>("cheeseIsDropped").value = false;
     }
 
-    private void ReturnToPlate()
+    private void DropNewCheese()
     {
+        Vector3 dropLocation = new Vector3();
+        dropLocation.x = Random.Range(-spawnRadius, spawnRadius);
+        dropLocation.z = Random.Range(-spawnRadius, spawnRadius);
+        dropLocation.y = 1.5f;
 
+        Collider[] hits = Physics.OverlapSphere(dropLocation, cheeseBufferSpace);
+
+        if (hits.Length == 0)
+        {
+            dropLocation.y = 6f;
+
+            transform.position = dropLocation;
+            EnableCheesePhysics();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -93,8 +117,22 @@ public class Cheese : MonoBehaviour
         {
             RiggleyPickup();
         }
+
+        if ((collision.gameObject.layer == 14))
+        {
+            DropNewCheese();
+        }
     }
 
+    private void EnableCheesePhysics()
+    {
+        cheeseDropped.Invoke();
+        rotund.GetComponent<BehaviourTreeOwner>().GetComponent<Blackboard>().GetVariable<bool>("cheeseIsDropped").value = true;
+        riggley.GetComponent<BehaviourTreeOwner>().GetComponent<Blackboard>().GetVariable<bool>("cheeseIsDropped").value = true;
+        transform.parent = null;
+        gameObject.AddComponent<Rigidbody>();
+        GetComponentInChildren<MeshCollider>().enabled = true;
+    }
     private IEnumerator PickupCooldown()
     {
         Debug.Log("StartCoroutine");

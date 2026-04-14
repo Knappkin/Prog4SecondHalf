@@ -17,6 +17,8 @@ namespace NodeCanvas.Tasks.Actions {
         private Vector3 playerDirectionLastFrame;
         private Vector3 playerDirectionThisFrame;
 
+        public BBParameter<LineRenderer> aimLineBBP;
+
         public float trackSpeed;
         public float distAhead;
 
@@ -34,6 +36,7 @@ namespace NodeCanvas.Tasks.Actions {
         //EndAction can be called from anywhere.
         protected override void OnExecute()
         {
+            aimLineBBP.value.enabled = true;
             //EndAction(true);
             myFixedUpdateBBP.value.fixedUpdateCall.AddListener(MyFixedUpdate);
             playerDirectionThisFrame = playerBBP.value.GetComponent<Rigidbody>().transform.forward;
@@ -53,6 +56,7 @@ namespace NodeCanvas.Tasks.Actions {
         protected override void OnStop()
         {
             myFixedUpdateBBP.value.fixedUpdateCall.RemoveListener(MyFixedUpdate);
+            aimLineBBP.value.enabled = false;
         }
 
         private void MyFixedUpdate()
