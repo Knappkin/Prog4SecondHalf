@@ -18,6 +18,7 @@ public class Cheese : MonoBehaviour
     public UnityEvent cheesePickedUp;
 
     public GameObject rotund;
+    public GameObject riggley;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -39,6 +40,7 @@ public class Cheese : MonoBehaviour
        
         cheeseDropped.Invoke();
         rotund.GetComponent<BehaviourTreeOwner>().GetComponent<Blackboard>().GetVariable<bool>("cheeseIsDropped").value = true;
+        riggley.GetComponent<BehaviourTreeOwner>().GetComponent<Blackboard>().GetVariable<bool>("cheeseIsDropped").value = true;
         transform.parent = null;
         gameObject.AddComponent<Rigidbody>();
         GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-5, 5), Random.Range(0, 5), Random.Range(-5, 5)), ForceMode.Impulse);
@@ -48,9 +50,18 @@ public class Cheese : MonoBehaviour
         StartCoroutine(PickupCooldown());
     }
 
-    private void GetEatenByRat()
+    public void RiggleyPickup() 
     {
+        Destroy(gameObject.GetComponent<Rigidbody>());
+        GetComponentInChildren<MeshCollider>().enabled = false;
+        transform.parent = riggley.transform;
 
+        transform.position = transform.parent.position;
+        Vector3 offsetTransform = transform.position;
+        offsetTransform.y += 1f;
+        transform.position = offsetTransform;
+        transform.rotation = transform.parent.rotation;
+        riggley.GetComponent<BehaviourTreeOwner>().GetComponent<Blackboard>().GetVariable<bool>("hasCheese").value = true;
     }
 
     private void PlayerPickUp()
@@ -63,6 +74,7 @@ public class Cheese : MonoBehaviour
         transform.rotation = transform.parent.rotation;
         playerScript.isHoldingCheese = true;
         rotund.GetComponent<BehaviourTreeOwner>().GetComponent<Blackboard>().GetVariable<bool>("cheeseIsDropped").value = false;
+        riggley.GetComponent<BehaviourTreeOwner>().GetComponent<Blackboard>().GetVariable<bool>("cheeseIsDropped").value = false;
     }
 
     private void ReturnToPlate()
@@ -75,6 +87,11 @@ public class Cheese : MonoBehaviour
         if (collision.gameObject.layer == 8)
         {
             PlayerPickUp();
+        }
+
+        if (collision.gameObject.layer == 13)
+        {
+            RiggleyPickup();
         }
     }
 

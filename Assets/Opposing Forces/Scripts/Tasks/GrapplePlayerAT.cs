@@ -11,7 +11,7 @@ namespace NodeCanvas.Tasks.Actions {
 		public BBParameter<Transform> playerBBP;
 		public BBParameter<float> grappleTimeBBP;
 		public BBParameter<GameObject> LatchSpotBBP;
-
+		public BBParameter<bool> isPouncingBBP;
 		private PlayerController playerScript;
 		//Use for initialization. This is called only once in the lifetime of the task.
 		//Return null if init was successfull. Return an error string otherwise
@@ -26,6 +26,7 @@ namespace NodeCanvas.Tasks.Actions {
 		protected override void OnExecute() {
 			playerScript.isGrappled = true;
 			agent.transform.parent = LatchSpotBBP.value.transform;
+			isPouncingBBP.value = false;
 			agent.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
             agent.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 			StartCoroutine(HoldOnToPlayer());
@@ -33,12 +34,18 @@ namespace NodeCanvas.Tasks.Actions {
 
         }
 
+        protected override void OnStop()
+        {
+            agent.transform.parent = null;
+            playerScript.isGrappled = false;
+        }
 		private IEnumerator HoldOnToPlayer()
 		{
 			yield return new WaitForSeconds(grappleTimeBBP.value);
-			agent.transform.parent = null;
-			playerScript.isGrappled = false;
+			
 			EndAction();
 		}
+
+
 	}
 }
